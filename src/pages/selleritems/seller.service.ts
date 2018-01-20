@@ -3,10 +3,10 @@ import { Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { AuctionPoolItemModel } from './auctionpool.model';
+import { SellerItemModel } from './seller.model';
 
 @Injectable()
-export class AuctionPoolService {
+export class SellerService {
   constructor(public http: Http) {}
 /*
 
@@ -17,8 +17,8 @@ export class AuctionPoolService {
                .catch(this.handleError);
   } 
 */
-  getAuctionPoolItem(): any {
-    return this.http.get('./assets/example_data/auctionpoolitems.json').map(res => res.json().auctionpoolitems);
+  getSellerItem(): any {
+    return this.http.get('./assets/example_data/selleritems.json').map(res => res.json().selleritems);
                
   }
   

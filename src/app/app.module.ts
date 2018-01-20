@@ -24,6 +24,14 @@ import { AggregatorService } from '../pages/aggregator/aggregator.service';
 import { AggregatorListPage } from '../pages/aggregator/list';
 import { AggregatorItemDetailsPage } from '../pages/aggregator/item-details/item-details';
 
+import { SellerListPage } from '../pages/selleritems/list';
+import { SellerItemDetailsPage } from '../pages/selleritems/item-details/item-details';
+import { SellerService } from '../pages/selleritems/seller.service';
+
+import { ProducerEntryPage } from '../pages/producerentry/producer-entry';
+
+
+
 import { FeedPage } from '../pages/feed/feed';
 import { FeedService } from '../pages/feed/feed.service';
 import { Http } from '@angular/http';
@@ -46,6 +54,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 	AggregatorListPage,
 	AggregatorItemDetailsPage,
 	AuctionItemDetailsPage,
+	SellerListPage,
+	ProducerEntryPage,
+	SellerItemDetailsPage,
 	FeedPage
   ],
   imports: [
@@ -66,6 +77,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 	AuctionPoolItemDetailsPage,
 	AggregatorListPage,
 	AggregatorItemDetailsPage,
+	SellerListPage,
+	ProducerEntryPage,
+	SellerItemDetailsPage,
 	TradeListPage,
 	FeedPage
   ],
@@ -76,6 +90,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 	AuctionService,
 	AggregatorService,
 	AuctionPoolService,
+	SellerService,
 	TradeService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

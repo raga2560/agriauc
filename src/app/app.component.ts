@@ -8,6 +8,8 @@ import { FeedPage } from '../pages/feed/feed';
 import { AuctionListPage } from '../pages/auctionitems/list';
 import { TradeListPage } from '../pages/tradeitems/list';
 import { AuctionPoolListPage } from '../pages/auctionpool/list';
+import { SellerListPage } from '../pages/selleritems/list';
+import { ProducerEntryPage } from '../pages/producerentry/producer-entry';
 import { AggregatorListPage } from '../pages/aggregator/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -39,6 +41,8 @@ export class MyApp {
 	  { title: 'TradeList', component: TradeListPage },
 	  { title: 'Aggregator', component: AggregatorListPage },
 	  { title: 'AuctionPool', component: AuctionPoolListPage },
+	  { title: 'ProducerEntry', component: ProducerEntryPage },
+	  { title: 'SellerList', component: SellerListPage },
 	  
 	  
 	  { title: 'Feed', component: FeedPage },
