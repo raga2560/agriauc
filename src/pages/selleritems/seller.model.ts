@@ -17,7 +17,7 @@ export class SellerItemModel {
 			offer: string ;
 			unitype : string ;
 			pricegiven: number;
-			
+			quantity: number;
 			traded: boolean;
 			tradedamount: 0;
 			listingdate: number;

@@ -29,6 +29,7 @@ import { SellerItemDetailsPage } from '../pages/selleritems/item-details/item-de
 import { SellerService } from '../pages/selleritems/seller.service';
 
 import { ProducerEntryPage } from '../pages/producerentry/producer-entry';
+import { ProduceEntryService } from '../pages/producerentry/producer-entry-service';
 
 
 
@@ -92,6 +93,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 	AuctionPoolService,
 	SellerService,
 	TradeService,
+	ProduceEntryService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

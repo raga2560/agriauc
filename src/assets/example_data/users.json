@@ -1,0 +1,37 @@
+{
+    "users": [
+        {
+            "name": "Ganesh",
+			"role": "consumer",
+			"blockaddress": "1B3h1yeZBfksLEXpj8jLAiTKDktne5iaWH55P7"
+			"preference": ["organic", "native", "raw"],
+			"itemtypes": ["rice", "dhal", "fruits"],
+			"place": "Bangalore"
+            
+        },
+        {
+            "name": "Paras",
+			"role": "producer",
+			"blockaddress": "1YuMTUESchZYPkba44nEknCjeATRFir58qGTmi"
+			"preference": ["organic", "native", "raw"],
+			"itemtypes": ["rice", "dhal", "fruits"],
+			"place": "Bangalore"
+        },
+        {
+           "name": "Kiran",
+			"role": "aggregator",
+			"blockaddress": "1RHaNKBK3CQmpPpvuSexGMZNeh4FBbSAVJJzVP"
+			"preference": ["organic", "native", "raw"],
+			"itemtypes": ["rice", "dhal", "fruits"],
+			"place": "Bangalore"
+        },
+		{
+           "name": "Anil",
+			"role": "auctioner",
+			"blockaddress": "1DJMNHC7A5U9C2MZ52YXbbMWHiNfL7W7GcL8n5"
+			"preference": ["organic", "native", "raw"],
+			"itemtypes": ["rice", "dhal", "fruits"],
+			"place": "Bangalore"
+        }
+    ]
+}

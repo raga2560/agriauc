@@ -13,6 +13,7 @@
 			"expirydate" : "30",
 			"baseprice" : 1000,
 			"unitsize" : 10,
+			"quantity": 500,
 			"unitype" : "kg",
 			"listingdate": "28"
             
@@ -30,6 +31,7 @@
 			"expirydate" : "30",
 			"baseprice" : 1000,
 			"unitsize" : 10,
+			"quantity": 500,
 			"unitype" : "kg",
 			"listingdate": "20"
         },
@@ -46,6 +48,7 @@
 			"expirydate" : "30",
 			"baseprice" : 1000,
 			"unitsize" : 10,
+			"quantity": 500,
 			"unitype" : "kg",
 			"listingdate": "20"
         }

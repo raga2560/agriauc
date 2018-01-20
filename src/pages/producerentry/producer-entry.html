@@ -10,34 +10,33 @@
 
 
 <ion-content>
-  <ion-list>
-  <ion-item>
-    <ion-label color="primary">Inline Label</ion-label>
-    <ion-input placeholder="Text Input"></ion-input>
-  </ion-item>
+   <ion-list>
+			<ion-item>
+			<ion-label color="primary" >Enter</ion-label>
+				  <ion-input  placeholder="Title" [(ngModel)]="selleritem.title"> </ion-input>  
+			</ion-item>
+			
+			   <ion-item>
+			   <ion-label color="primary" stacked large> Description of item</ion-label>
+				<ion-textarea placeholder="Enter Description"  [(ngModel)]="selleritem.description" > </ion-textarea>   
+			
+			</ion-item>
+			
+			<ion-item>
+			   <ion-label color="primary" >Enter Baseprice</ion-label>
+				 <ion-input type="number" placeholder="Base price" [(ngModel)]="selleritem.baseprice" > </ion-input>
+			</ion-item>
+			
+			<ion-item>
+			   <ion-label color="primary" >Enter quantity</ion-label>
+				 <ion-input type="number" placeholder="Quantity" [(ngModel)]="selleritem.quantity" > </ion-input>
+			</ion-item>
+			
+			
+			<button ion-button block (click)="createItemEntry()" id="createinsure">Create Item Entry</button >        
+			
 
-  <ion-item>
-    <ion-label color="primary" fixed>Fixed Label</ion-label>
-    <ion-input type="tel" placeholder="Tel Input"></ion-input>
-  </ion-item>
 
-  <ion-item>
-    <ion-input type="number" placeholder="Number Input with no label"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label color="primary" stacked>Stacked Label</ion-label>
-    <ion-input type="email" placeholder="Email Input"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label color="primary" stacked>Stacked Label</ion-label>
-    <ion-input type="password" placeholder="Password Input"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label color="primary" floating>Floating Label</ion-label>
-    <ion-input></ion-input>
-  </ion-item>
-  </ion-list>
+	</ion-list>		
+  
 </ion-content>
