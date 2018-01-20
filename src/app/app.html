@@ -8,10 +8,12 @@
 
   <ion-content>
     <ion-list>
-      <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
+      <button ion-item *ngFor="let p of pages" (click)="openPage(p)" >
+        <span style="color:blue" *ngIf="p.component==null"> {{p.title}} </span>
+		<span  *ngIf="p.component!=null"> {{p.title}} </span>
       </button>
     </ion-list>
+	
   </ion-content>
 
 </ion-menu>

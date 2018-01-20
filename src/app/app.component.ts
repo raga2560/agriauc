@@ -37,10 +37,16 @@ export class MyApp {
     // set our app's pages
     this.pages = [
       { title: 'Hello Ionic', component: HelloIonicPage },
+	  { title: 'Consumer Menus', component: null },
 	  { title: 'AuctionList', component: AuctionListPage },
 	  { title: 'TradeList', component: TradeListPage },
+	  { title: 'Aggregator Menus', component: null },
+	  
 	  { title: 'Aggregator', component: AggregatorListPage },
+	  
+	  { title: 'Auctioner Menus', component: null },
 	  { title: 'AuctionPool', component: AuctionPoolListPage },
+	  { title: 'Producer Menus', component: null },
 	  { title: 'ProducerEntry', component: ProducerEntryPage },
 	  { title: 'SellerList', component: SellerListPage },
 	  
@@ -62,7 +68,9 @@ export class MyApp {
   openPage(page) {
     // close the menu when clicking a link from the menu
     this.menu.close();
+	if(page.component != null){
     // navigate to the new page if it is not the current page
     this.nav.setRoot(page.component);
+	}
   }
 }
