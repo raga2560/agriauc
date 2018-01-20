@@ -16,6 +16,14 @@ import { TradeService } from '../pages/tradeitems/trade.service';
 import { TradeListPage } from '../pages/tradeitems/list';
 import { TradeItemDetailsPage } from '../pages/tradeitems/item-details/item-details';
 
+import { AuctionPoolService } from '../pages/auctionpool/auctionpool.service';
+import { AuctionPoolListPage } from '../pages/auctionpool/list';
+import { AuctionPoolItemDetailsPage } from '../pages/auctionpool/item-details/item-details';
+
+import { AggregatorService } from '../pages/aggregator/aggregator.service';
+import { AggregatorListPage } from '../pages/aggregator/list';
+import { AggregatorItemDetailsPage } from '../pages/aggregator/item-details/item-details';
+
 import { FeedPage } from '../pages/feed/feed';
 import { FeedService } from '../pages/feed/feed.service';
 import { Http } from '@angular/http';
@@ -33,6 +41,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 	AuctionListPage,
 	TradeItemDetailsPage,
 	TradeListPage,
+	AuctionPoolListPage,
+	AuctionPoolItemDetailsPage,
+	AggregatorListPage,
+	AggregatorItemDetailsPage,
 	AuctionItemDetailsPage,
 	FeedPage
   ],
@@ -50,6 +62,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 	AuctionListPage,
 	AuctionItemDetailsPage,
 	TradeItemDetailsPage,
+	AuctionPoolListPage,
+	AuctionPoolItemDetailsPage,
+	AggregatorListPage,
+	AggregatorItemDetailsPage,
 	TradeListPage,
 	FeedPage
   ],
@@ -58,6 +74,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SplashScreen,
 	FeedService,
 	AuctionService,
+	AggregatorService,
+	AuctionPoolService,
 	TradeService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

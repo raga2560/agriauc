@@ -7,6 +7,8 @@ import { ListPage } from '../pages/list/list';
 import { FeedPage } from '../pages/feed/feed';
 import { AuctionListPage } from '../pages/auctionitems/list';
 import { TradeListPage } from '../pages/tradeitems/list';
+import { AuctionPoolListPage } from '../pages/auctionpool/list';
+import { AggregatorListPage } from '../pages/aggregator/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -35,6 +37,9 @@ export class MyApp {
       { title: 'Hello Ionic', component: HelloIonicPage },
 	  { title: 'AuctionList', component: AuctionListPage },
 	  { title: 'TradeList', component: TradeListPage },
+	  { title: 'Aggregator', component: AggregatorListPage },
+	  { title: 'AuctionPool', component: AuctionPoolListPage },
+	  
 	  
 	  { title: 'Feed', component: FeedPage },
       { title: 'My First List', component: ListPage }
