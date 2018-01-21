@@ -37,7 +37,7 @@ export class ProduceEntryService {
   
    getProducerList(): Observable<SellerItemModel[]> {
 
-   this.socket.on('listall', (res) => {
+   this.socket.on('allAssetsDB', (res) => {
       this.selleritems.next(res);
       // this.observer.complete();
     });
@@ -50,7 +50,7 @@ export class ProduceEntryService {
 		recordname: this.recordname
 	};
 	    
-    this.socket.emit('listall', listalldata);
+    this.socket.emit('getAllAssetsDB', listalldata);
 
 
     return this.createObservable();
@@ -69,7 +69,7 @@ export class ProduceEntryService {
   }
   
   // Create a bramd new insurelist
-  createProductEntry(selleritem: SellerItemModel): void {
+  createProductEntry(selleritem: any): void {
 	  var pushdata = {
 		data: selleritem,
 		recordname: this.recordname

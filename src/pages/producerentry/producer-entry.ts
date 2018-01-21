@@ -50,7 +50,7 @@ export class ProducerEntryPage {
                 name: this.selleritem.title,
                 open: true
             },
-		qty: eval(this.selleritem.quantity),
+		qty: this.selleritem.quantity,
 		units: 0.1,
 		details: this.selleritem
 		

@@ -42,6 +42,7 @@ export class AuctionPoolListPage {
 	this.tradeservice
       .getAuctionPoolItem().subscribe(posts  => {
       this.items = posts;
+	  console.log (posts);
 	  this.loading.dismiss();
     });
 	
