@@ -31,7 +31,7 @@ export class SellerListPage {
   }
   
     ionViewDidLoad() {
-    this.loading.present();
+   // this.loading.present();
     
 	/*
 	// This works with stored json data
@@ -51,7 +51,7 @@ export class SellerListPage {
 			this.items.push(posts[i].details) ; //= posts;  
 		  }
 	  }
-	  this.loading.dismiss();
+	 // this.loading.dismiss();
       
     });
 	

@@ -3,7 +3,7 @@
     <button menuToggle *ngIf="!selectedItem">
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Item Details</ion-title>
+    <ion-title>Transfer to aggregator </ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -21,23 +21,8 @@
 
 
   <ion-list>
-  <ion-item>
-  Asking prices
-</ion-item>
-
-    <button ion-item *ngFor="let item of selectedItem.prices" (click)="buy($event, item)">
-      <ion-icon name="{{item.icon}}" item-left></ion-icon>
-      {{item.price}}
-      <div class="item-note" item-right>
-        {{item.amount}}
-      </div>
-    </button>
-	
-	<ion-item>
-    <ion-label color="primary">Your price</ion-label>
-    <ion-input placeholder="Enter Price"></ion-input>
-  </ion-item>
-  <button ion-button round>Submit your price</button>
+  
+  <button ion-button round (click)="transferToAggregator()">Tranfer to aggregator</button>
 
 
   

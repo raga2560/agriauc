@@ -78,6 +78,16 @@ export class ProduceEntryService {
     this.socket.emit('issueAsset', pushdata);
   }
 
+  // Create a bramd new insurelist
+  transferToAggregator(selleritem: any): void {
+	  var pushdata = {
+		data: selleritem,
+		recordname: this.recordname
+	};
+	    
+    this.socket.emit('sendAssetFrom', pushdata);
+  }
+  
 
   createErrorObservable() : Observable<any> {
       return Observable.create((observer: Observer<any>) => {

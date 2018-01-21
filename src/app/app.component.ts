@@ -36,7 +36,7 @@ export class MyApp {
 
     // set our app's pages
     this.pages = [
-      { title: 'Hello Ionic', component: HelloIonicPage },
+//      { title: 'Hello Ionic', component: HelloIonicPage },
 	  { title: 'Consumer Menus', component: null },
 	  { title: 'AuctionList', component: AuctionListPage },
 	  { title: 'TradeList', component: TradeListPage },
@@ -48,11 +48,11 @@ export class MyApp {
 	  { title: 'AuctionPool', component: AuctionPoolListPage },
 	  { title: 'Producer Menus', component: null },
 	  { title: 'ProducerEntry', component: ProducerEntryPage },
-	  { title: 'SellerList', component: SellerListPage },
+	  { title: 'SellerList', component: SellerListPage }  //,
 	  
 	  
-	  { title: 'Feed', component: FeedPage },
-      { title: 'My First List', component: ListPage }
+	//  { title: 'Feed', component: FeedPage },
+    //  { title: 'My First List', component: ListPage }
     ];
   }
 
