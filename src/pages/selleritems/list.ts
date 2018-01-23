@@ -43,7 +43,7 @@ export class SellerListPage {
     });
 	*/
 	
-	this.entryservice.getProducerList({}).subscribe((posts: any) => {
+	this.entryservice.getProducerList().subscribe((posts: any) => {
 	  console.log(posts);
 	  
 	  for(var i=0; i< posts.length; i++) {
