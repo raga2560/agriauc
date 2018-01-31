@@ -18,6 +18,14 @@ export class AggregatorListPage {
 
   // feed: AuctionItemModel = new AuctionItemModel();
   loading: any;
+   aggregator:any = {
+           "name": "Kiran",
+                        "role": "aggregator",
+                        "blockaddress": "1RHaNKBK3CQmpPpvuSexGMZNeh4FBbSAVJJzVP",
+                        "preference": ["organic", "native", "raw"],
+                        "itemtypes": ["rice", "dhal", "fruits"],
+                        "place": "Bangalore"
+        };
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public aggregatorservice: AggregatorService, public loadingCtrl: LoadingController ) {
@@ -39,8 +47,12 @@ export class AggregatorListPage {
     ionViewDidLoad() {
     // this.loading.present();
     
+      var aggregatordata = {
+                address: this.aggregator.blockaddress
+        };
+
 	this.aggregatorservice
-      .getItemToCertify().subscribe(posts  => {
+      .getItemToCertify(aggregatordata).subscribe(posts  => {
        //console.log(posts);
 
           for(var i=0; i< posts.length; i++) {

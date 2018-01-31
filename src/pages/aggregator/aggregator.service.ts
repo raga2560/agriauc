@@ -36,7 +36,7 @@ export class AggregatorService {
 
   }
   
-   getItemToCertify(): Observable<AggregatorItemModel[]> {
+   getItemToCertify(aggregatordata:any): Observable<AggregatorItemModel[]> {
 
    this.socket.on('allAssetsDB', (res) => {
       this.aggregatoritems.next(res);
@@ -44,11 +44,12 @@ export class AggregatorService {
     });
 	
 	var query = {
-		type: 'producerlistall'
+		type: 'aggregatorlistall'
 	};
 	var listalldata = {
 		query: query,
-		recordname: this.recordname
+		recordname: this.recordname,
+		useraddress: aggregatordata.address
 	};
 	    
     this.socket.emit('getAllAssetsDB', listalldata);

@@ -35,7 +35,7 @@ export class ProduceEntryService {
 
   }
   
-   getProducerList(): Observable<SellerItemModel[]> {
+   getProducerList(producerdata:any): Observable<SellerItemModel[]> {
 
    this.socket.on('allAssetsDB', (res) => {
       this.selleritems.next(res);
@@ -47,7 +47,8 @@ export class ProduceEntryService {
 	};
 	var listalldata = {
 		query: query,
-		recordname: this.recordname
+		recordname: this.recordname,
+		useraddress: producerdata.address
 	};
 	    
     this.socket.emit('getAllAssetsDB', listalldata);
