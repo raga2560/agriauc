@@ -69,19 +69,25 @@ export class ProduceEntryService {
   }
   
   // Create a bramd new insurelist
-  createProductEntry(selleritem: any): void {
+  createProductEntry(selleritem: any): any {
 	  var pushdata = {
 		data: selleritem,
 		recordname: this.recordname
 	};
 	    
+   this.socket.on('issuedAsset', (res) => {
+      this.selleritem.next(res);
+      // this.observer.complete();
+    });
     this.socket.emit('issueAsset', pushdata);
+    return this.getObservable();
   }
 
   // Create a bramd new insurelist
   transferToAggregator(selleritem: any): void {
 	  var pushdata = {
 		data: selleritem,
+                actiontype: 'producertoaggregator',
 		recordname: this.recordname
 	};
 	    

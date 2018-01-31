@@ -17,6 +17,7 @@ export class AuctionItemModel {
 			offer: string ;
 			unitype : string ;
 			listingdate: number;
+			details:any;
 			
 }
 

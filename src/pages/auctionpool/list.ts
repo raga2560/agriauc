@@ -20,7 +20,7 @@ export class AuctionPoolListPage {
   loading: any;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public tradeservice: AuctionPoolService, public loadingCtrl: LoadingController ) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public auctionpoolservice: AuctionPoolService, public loadingCtrl: LoadingController ) {
     this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
     'american-football', 'boat', 'bluetooth', 'build'];
 
@@ -37,13 +37,21 @@ export class AuctionPoolListPage {
   }
   
     ionViewDidLoad() {
-    this.loading.present();
+//    this.loading.present();
     
-	this.tradeservice
-      .getAuctionPoolItem().subscribe(posts  => {
-      this.items = posts;
-	  console.log (posts);
-	  this.loading.dismiss();
+	this.auctionpoolservice
+      .getAuctionPoolItems().subscribe(posts  => {
+       // this.items = posts;
+	//  console.log (posts);
+
+	 for(var i=0; i< posts.length; i++) {
+                  if(posts[i].details != null) {
+                 // console.log(JSON.stringify(posts[i].details));
+                        this.items.push(posts[i].details) ; //= posts;
+                  }
+          }
+
+//	  this.loading.dismiss();
     });
 	
   }

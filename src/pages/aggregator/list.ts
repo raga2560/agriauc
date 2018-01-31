@@ -20,7 +20,7 @@ export class AggregatorListPage {
   loading: any;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public tradeservice: AggregatorService, public loadingCtrl: LoadingController ) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public aggregatorservice: AggregatorService, public loadingCtrl: LoadingController ) {
     this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
     'american-football', 'boat', 'bluetooth', 'build'];
 
@@ -37,12 +37,21 @@ export class AggregatorListPage {
   }
   
     ionViewDidLoad() {
-    this.loading.present();
+    // this.loading.present();
     
-	this.tradeservice
+	this.aggregatorservice
       .getItemToCertify().subscribe(posts  => {
-      this.items = posts;
-	  this.loading.dismiss();
+       //console.log(posts);
+
+          for(var i=0; i< posts.length; i++) {
+                  if(posts[i].details != null) {
+		 // console.log(JSON.stringify(posts[i].details));
+                        this.items.push(posts[i].details) ; //= posts;
+                  }
+          }
+
+//      this.items = posts;
+//	  this.loading.dismiss();
     });
 	
   }

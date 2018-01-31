@@ -52,14 +52,15 @@ export class SellerItemDetailsPage {
                 open: true
             },
 		qty: 1,
-		units: 0.1
+		units: 0.1,
+		details:this.selectedItem 
 		
 		
 	};
       
     this.entryservice.transferToAggregator(dataforblockchain);
 	
-	
+    this.goToSellerList();	
 	
     
 	   
@@ -67,7 +68,7 @@ export class SellerItemDetailsPage {
   
   goToSellerList() {
 	//  alert(JSON.stringify(property));
-    this.navCtrl.push(SellerListPage);
+    this.navCtrl.setRoot(SellerListPage);
   }
   
   

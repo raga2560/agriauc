@@ -17,6 +17,7 @@ export class AggregatorItemModel {
 			offer: string ;
 			unitype : string ;
 			pricegiven: number;
+			details: any;
 			
 			traded: boolean;
 			tradedamount: 0;

@@ -37,12 +37,18 @@ export class AuctionListPage {
   }
   
     ionViewDidLoad() {
-    this.loading.present();
+    // this.loading.present();
     
 	this.auctionservice
-      .getAuctionItem().subscribe(posts  => {
-      this.items = posts;
-	  this.loading.dismiss();
+      .getAuctionItems().subscribe(posts  => {
+	for(var i=0; i< posts.length; i++) {
+                  if(posts[i].details != null) {
+                 // console.log(JSON.stringify(posts[i].details));
+                        this.items.push(posts[i].details) ; //= posts;
+                  }
+          }
+
+//	  this.loading.dismiss();
     });
 	
   }

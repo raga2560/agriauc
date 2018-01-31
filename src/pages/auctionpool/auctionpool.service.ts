@@ -1,31 +1,108 @@
-import { Injectable } from "@angular/core";
-import { Http } from '@angular/http';
+import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs/Subject'; 
+import { Observable } from 'rxjs/Observable';
+import { Observer } from 'rxjs/Observer';
 
-import 'rxjs/add/operator/toPromise';
 
 import { AuctionPoolItemModel } from './auctionpool.model';
 
+import * as io from 'socket.io-client';
+
+
+
+
+
 @Injectable()
 export class AuctionPoolService {
-  constructor(public http: Http) {}
-/*
 
-  getPosts(): Promise<FeedPostModel[]> {
-    return this.http.get('./assets/example_data/feed.json')
-               .toPromise()
-               .then(response => response.json().feed as FeedPostModel[])
-               .catch(this.handleError);
-  } 
-*/
-  getAuctionPoolItem(): any {
-    return this.http.get('./assets/example_data/auctionpoolitems.json').map(res => res.json().auctionpoolitems);
-               
+  private basePath = '/tmp';
+  recordname: any;
+
+  socket:any;  
+  observer:Observer<any>;  
+
+  auctionpools: Observer<AuctionPoolItemModel[]> ; //= null; //  list of objects
+  auctionpool: Observer<AuctionPoolItemModel> ; // = null; //   single object
+
+
+
+  
+
+  constructor() { 
+    this.socket = io('http://localhost:8080/blockchain'); 
+	  this.recordname = "mandicollection"; 
+
+
   }
   
-   
-   
-  private handleError(error: any): Promise<any> {
-    console.error('An error occurred', error); // for demo purposes only
-    return Promise.reject(error.message || error);
-  } 
+   getAuctionPoolItems(): Observable<AuctionPoolItemModel[]> {
+
+   this.socket.on('allAssetsDB', (res) => {
+      this.auctionpools.next(res);
+      // this.observer.complete();
+    });
+	
+	var query = {
+		type: 'producerlistall'
+	};
+	var listalldata = {
+		query: query,
+		recordname: this.recordname
+	};
+	    
+    this.socket.emit('getAllAssetsDB', listalldata);
+
+
+    return this.createObservable();
+  }
+
+  createObservable() : Observable<AuctionPoolItemModel[]> {
+      return Observable.create((observer: Observer<AuctionPoolItemModel[]>) => {
+        this.auctionpools = observer;
+      });
+  }
+  
+  getObservable() : Observable<AuctionPoolItemModel> {
+      return Observable.create((observer: Observer<AuctionPoolItemModel>) => {
+        this.auctionpool = observer;
+      });
+  }
+  
+  // Create a bramd new insurelist
+  createProductEntry(auctionpool: any): any {
+	  var pushdata = {
+		data: auctionpool,
+		recordname: this.recordname
+	};
+	    
+   this.socket.on('issuedAsset', (res) => {
+      this.auctionpool.next(res);
+      // this.observer.complete();
+    });
+    this.socket.emit('issueAsset', pushdata);
+    return this.getObservable();
+  }
+
+  // Create a bramd new insurelist
+  transferToAuctionPool(auctionpool: any): void {
+	  var pushdata = {
+		data: auctionpool,
+                actiontype: 'producertoaggregator',
+		recordname: this.recordname
+	};
+	    
+    this.socket.emit('sendAssetFrom', pushdata);
+  }
+  
+
+  createErrorObservable() : Observable<any> {
+      return Observable.create((observer: Observer<any>) => {
+        this.observer = observer;
+      });
+  }  
+  // Default error handling for all actions
+  private handleError(error:any) {
+    console.log(error)
+  }
+
 }

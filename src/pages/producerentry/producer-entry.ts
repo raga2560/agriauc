@@ -56,7 +56,10 @@ export class ProducerEntryPage {
 		
 	};
       
-    this.entryservice.createProductEntry(dataforblockchain);
+    this.entryservice.createProductEntry(dataforblockchain).subscribe((data)=> {
+   	console.log(JSON.stringify(data)); 
+	console.log("created this="+data);
+    });
 	
 	this.goToSellerList();
 	

@@ -37,12 +37,19 @@ export class TradeListPage {
   }
   
     ionViewDidLoad() {
-    this.loading.present();
+ //   this.loading.present();
     
 	this.tradeservice
-      .getTradeItem().subscribe(posts  => {
-      this.items = posts;
-	  this.loading.dismiss();
+      .getTradeItems().subscribe(posts  => {
+//      this.items = posts;
+//	  this.loading.dismiss();
+ 	for(var i=0; i< posts.length; i++) {
+                  if(posts[i].details != null) {
+                 // console.log(JSON.stringify(posts[i].details));
+                        this.items.push(posts[i].details) ; //= posts;
+                  }
+          }
+
     });
 	
   }
