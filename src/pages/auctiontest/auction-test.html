@@ -1,0 +1,42 @@
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>My First List</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+   <ion-list>
+			<ion-item>
+			<ion-label color="primary" >Enter</ion-label>
+				  <ion-input  placeholder="Title" [(ngModel)]="auctionitem.title"> </ion-input>  
+			</ion-item>
+			
+			   <ion-item>
+			   <ion-label color="primary" stacked large> Description of item</ion-label>
+				<ion-textarea placeholder="Enter Description"  [(ngModel)]="auctionitem.description" > </ion-textarea>   
+			
+			</ion-item>
+			
+			<ion-item>
+			   <ion-label color="primary" >Enter Baseprice</ion-label>
+				 <ion-input type="number" placeholder="Base price" [(ngModel)]="auctionitem.baseprice" > </ion-input>
+			</ion-item>
+			
+			<ion-item>
+			   <ion-label color="primary" >Enter quantity</ion-label>
+				 <ion-input type="number" placeholder="Quantity" [(ngModel)]="auctionitem.quantity" > </ion-input>
+			</ion-item>
+			
+			
+			<button ion-button block (click)="createItemEntry()" id="createinsure">Create Item Entry</button >        
+			
+
+
+	</ion-list>		
+  
+</ion-content>

@@ -12,6 +12,9 @@ import { AuctionService } from '../pages/auctionitems/auction.service';
 import { AuctionListPage } from '../pages/auctionitems/list';
 import { AuctionItemDetailsPage } from '../pages/auctionitems/item-details/item-details';
 
+import { AuctionTestService } from '../pages/auctiontest/auction-test-service';
+import { AuctionTestPage } from '../pages/auctiontest/auction-test';
+
 import { TradeService } from '../pages/tradeitems/trade.service';
 import { TradeListPage } from '../pages/tradeitems/list';
 import { TradeItemDetailsPage } from '../pages/tradeitems/item-details/item-details';
@@ -55,6 +58,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 	AggregatorListPage,
 	AggregatorItemDetailsPage,
 	AuctionItemDetailsPage,
+        AuctionTestPage,
 	SellerListPage,
 	ProducerEntryPage,
 	SellerItemDetailsPage,
@@ -79,6 +83,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 	AggregatorListPage,
 	AggregatorItemDetailsPage,
 	SellerListPage,
+        AuctionTestPage,
 	ProducerEntryPage,
 	SellerItemDetailsPage,
 	TradeListPage,
@@ -93,6 +98,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 	AuctionPoolService,
 	SellerService,
 	TradeService,
+        AuctionTestService,
 	ProduceEntryService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

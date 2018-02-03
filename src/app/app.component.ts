@@ -8,6 +8,7 @@ import { FeedPage } from '../pages/feed/feed';
 import { AuctionListPage } from '../pages/auctionitems/list';
 import { TradeListPage } from '../pages/tradeitems/list';
 import { AuctionPoolListPage } from '../pages/auctionpool/list';
+import { AuctionTestPage } from '../pages/auctiontest/auction-test';
 import { SellerListPage } from '../pages/selleritems/list';
 import { ProducerEntryPage } from '../pages/producerentry/producer-entry';
 import { AggregatorListPage } from '../pages/aggregator/list';
@@ -45,6 +46,7 @@ export class MyApp {
 	  { title: 'Aggregator', component: AggregatorListPage },
 	  
 	  { title: 'Auctioner Menus', component: null },
+	  { title: 'Auctioner test', component: AuctionTestPage },
 	  { title: 'AuctionPool', component: AuctionPoolListPage },
 	  { title: 'Producer Menus', component: null },
 	  { title: 'ProducerEntry', component: ProducerEntryPage },
